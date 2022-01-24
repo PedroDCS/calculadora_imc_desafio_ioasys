@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                   textobotao: "Entrar",
                   corbotao: Theme.of(context).buttonColor,
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, "/calculadora");
+                    Navigator.pushReplacementNamed(context, "/listatarefas");
                   },
                 ),
                 const SizedBox(
