@@ -1,8 +1,9 @@
-import 'package:calculadora_imc_aula3/pages/pagina_calculadora/controller/calculadora_controll.dart';
-import 'package:calculadora_imc_aula3/widgets/botao.dart';
-import 'package:flutter/material.dart';
+import '/widgets/comun/drawer_menu.dart';
+import '/controllers/calculadora/calculadora_controll.dart';
+import '/widgets/comun/botao_grande_circular.dart';
+import '/widgets/comun/text_fild_widget.dart';
 
-import 'widgets/text_fild_widget.dart';
+import 'package:flutter/material.dart';
 
 class CalculadoraIMC extends StatefulWidget {
   const CalculadoraIMC({Key? key}) : super(key: key);
@@ -19,10 +20,18 @@ class _CalculadoraIMCState extends State<CalculadoraIMC> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: const Drawer_menu(),
         appBar: AppBar(
           backgroundColor: Theme.of(context).primaryColor,
-          leading: Image.asset('assets/images/logo_home.png'),
-          title: const Text("Calculadora IMC"),
+          title: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 25, 0),
+                child: Image.asset('assets/images/logo_home.png'),
+              ),
+              const Text("Calculadora IMC")
+            ],
+          ),
           actions: [
             GestureDetector(
               onTap: () {
@@ -32,7 +41,7 @@ class _CalculadoraIMCState extends State<CalculadoraIMC> {
                 });
               },
               child: Container(
-                margin: EdgeInsets.only(right: 15),
+                margin: const EdgeInsets.only(right: 15),
                 child: const Icon(Icons.refresh),
               ),
             )
@@ -48,11 +57,11 @@ class _CalculadoraIMCState extends State<CalculadoraIMC> {
               const SizedBox(
                 height: 47,
               ),
-              textfildcostum(
+              TextFildCustom(
                 pesoController: pesoController,
                 hinttext: 'Peso (Kg)',
               ),
-              textfildcostum(
+              TextFildCustom(
                 pesoController: alturaController,
                 hinttext: 'Altura (Cm)',
               ),
@@ -69,7 +78,7 @@ class _CalculadoraIMCState extends State<CalculadoraIMC> {
                     }),
               ),
               Container(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 10),
                   child: Text(
                     textInfo,
                     style: TextStyle(

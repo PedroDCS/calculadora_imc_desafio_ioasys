@@ -1,6 +1,7 @@
-import 'package:calculadora_imc_aula3/widgets/botao.dart';
+import '../../widgets/comun/botao_grande_circular.dart';
+import '../../widgets/comun/text_field_circular_widget.dart';
 import 'package:flutter/material.dart';
-import 'widgets/custom_text_field_widget.dart';
+import '../../widgets/comun/text_field_circular_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -25,7 +26,8 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Seja Bem Vindo",
                   style: TextStyle(
-                      fontSize: 31, color: Theme.of(context).primaryColorLight),
+                      fontSize: 31,
+                      color: Theme.of(context).colorScheme.onPrimary),
                 ),
                 const SizedBox(
                   height: 10,
@@ -33,16 +35,17 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Calculadora IMC",
                   style: TextStyle(
-                      fontSize: 24, color: Theme.of(context).primaryColorLight),
+                      fontSize: 24,
+                      color: Theme.of(context).colorScheme.onPrimary),
                 ),
                 Container(
                     margin: const EdgeInsets.only(top: 43),
-                    child: const CustomTextFieldWidget(
+                    child: const TextField_circular_Widget(
                       hintText: 'usuario',
                     )),
                 Container(
                     margin: const EdgeInsets.only(top: 20),
-                    child: const CustomTextFieldWidget(
+                    child: const TextField_circular_Widget(
                       hintText: 'senha',
                       obscureText: true,
                     )),
@@ -51,9 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Botao_whidget(
                   textobotao: "Entrar",
-                  corbotao: Theme.of(context).buttonColor,
+                  corbotao: Theme.of(context).colorScheme.primaryVariant,
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, "/listatarefas");
+                    Navigator.pushReplacementNamed(context, "/calculadora");
                   },
                 ),
                 const SizedBox(

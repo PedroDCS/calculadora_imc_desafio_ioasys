@@ -1,8 +1,15 @@
+import '/models/todoTaskModel.dart';
 import 'package:flutter/material.dart';
-import '../models/todoTaskModel.dart';
 
 class ToDoControler {
-  List<TaskModel> listToDo = [];
+  List<TaskModel> listToDo = [
+    TaskModel(desc: 'textControler.text1'),
+    TaskModel(desc: 'textControler.text2'),
+    TaskModel(desc: 'textControler.text3'),
+    TaskModel(desc: 'textControler.text4'),
+    TaskModel(desc: 'textControler.text5'),
+    TaskModel(desc: 'textControler.text6'),
+  ];
   TextEditingController textControler = TextEditingController();
 
   void addTodo() {

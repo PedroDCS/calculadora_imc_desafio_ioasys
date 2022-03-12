@@ -1,8 +1,8 @@
-import 'package:calculadora_imc_aula3/pages/pagina_lista_tarefas/widgets/list_task_widget.dart';
+import '/widgets/comun/drawer_menu.dart';
+import '/widgets/todo_list/input_add_widget.dart';
+import '/widgets/todo_list/list_task_widget.dart';
+import '/controllers/lista_tarefas/todo_controller.dart';
 import 'package:flutter/material.dart';
-
-import 'controller/todo_controller.dart';
-import 'widgets/input_add_widget.dart';
 
 class ListaTarefas extends StatefulWidget {
   const ListaTarefas({Key? key}) : super(key: key);
@@ -21,13 +21,14 @@ class _ListaTarefasState extends State<ListaTarefas> {
         title: Row(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.fromLTRB(0, 0, 25, 0),
               child: Image.asset('assets/images/logo_home.png'),
             ),
             Text("Lista de Tarefas")
           ],
         ),
       ),
+      drawer: const Drawer_menu(),
       body: Column(
         children: [
           Padding(

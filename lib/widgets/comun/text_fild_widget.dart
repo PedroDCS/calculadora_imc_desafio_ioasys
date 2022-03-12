@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class textfildcostum extends StatelessWidget {
-  textfildcostum({
+class TextFildCustom extends StatelessWidget {
+  TextFildCustom({
     Key? key,
     required this.pesoController,
     required this.hinttext,
